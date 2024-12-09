@@ -1,0 +1,209 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  body{
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: #121212;
+    color: whitesmoke;
+    overflow: hidden;
+ 
+  }
+
+
+  .home-container {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards; 
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(./assets/home-page.jpg);
+    background-size: cover;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+  }
+
+
+  .hero{
+    padding: 1rem 3rem;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+
+  .fadeIn{
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+  }
+  .fadeOut {
+    animation: fadeOut 0.5s ease-in-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0; 
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1; 
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+/* Base styles for navbar */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%; /* Ensure navbar width is 100% */
+    max-width: 100%;
+    padding: 0.8rem 1.8rem;
+    background-color: #1a1a1a;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 100%;
+    max-width: 180px; /* Adjust logo width */
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    flex-grow: 1; /* Make sure nav items take up remaining space */
+    justify-content: flex-end;
+    padding: 0 8rem;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 1.4rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #f39c12; /* Accent color */
+}
+
+/* Mobile Menu Toggle Button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #f39c12; /* Color for hamburger bars */
+    transition: all 0.4s ease;
+}
+
+/* Show hamburger button and modify layout on mobile */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.8rem 1.2rem; /* Adjust navbar padding */
+    }
+
+      /* Move the logo to the left and hamburger to the right */
+      .logo {
+        flex-grow: 1; /* Allow the logo to grow and take up available space */
+        justify-content: flex-start; /* Align the logo to the left */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger icon */
+        justify-content: flex-end; /* Align hamburger button to the right */
+    }
+  
+
+    /* Hide the nav links by default */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 2rem;
+        position: absolute;
+        top: 70px; /* Position links just below the navbar */
+        left: 0; /* Ensure it's aligned to the left */
+        right: 0;
+        background-color: #1a1a1a;
+        width: 100%;
+        padding: 1rem 2rem;
+        justify-content: center; /* Center items vertically */
+        align-items: center; /* Center items horizontally */
+        height: calc(100vh - 70px); /* Full height minus the navbar height */
+        transition: top 0.3s ease-out; /* Smooth sliding transition */
+    }
+
+    /* Show nav links when active */
+    .nav-links.active {
+        display: flex; /* Make links visible */
+        top: 70px; /* Slide down from top */
+        padding: 0;
+    }
+
+    /* Adjust the font size of the links in mobile view */
+    .nav-links a {
+        font-size: 2rem;
+    }
+
+    /* Show the hamburger icon */
+    .hamburger {
+        display: flex;
+        position: absolute; /* Ensure it's within the navbar */
+        right: 4rem; /* Space from right edge */
+        top: 50%;
+        transform: translateY(-50%); /* Keep it vertically centered */
+    }
+}
+
+/* Hamburger icon animation when active */
+.hamburger.active div:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 8px;
+}
+
+.hamburger.active div:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active div:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -8px;
+}

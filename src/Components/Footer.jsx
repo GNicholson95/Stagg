@@ -43,10 +43,10 @@ const Footer = () => {
         {/* Social Media and Copyright */}
         <div className="footer-bottom">
           <section className="footer-social-media">
-            <a className="social-btn" href="https://www.facebook.com/profile.php?id=100095382254130" target="_blank" role="button">
+            <a className="social-btn" href="https://www.facebook.com/george.nicholson.7921" target="_blank" role="button">
               <i className="fab fa-facebook-f"></i>
             </a>
-            <a className="social-btn" href="https://www.instagram.com/elegante_finishes/" target="_blank" role="button">
+            <a className="social-btn" href="https://www.instagram.com/xgeorgenicholson/" target="_blank" role="button">
               <i className="fab fa-instagram"></i>
             </a>
             <div className="social-text">

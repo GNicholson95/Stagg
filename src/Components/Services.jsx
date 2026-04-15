@@ -37,13 +37,13 @@ const Services = () => {
           </p>
                 </div>
             </div>
-            <img className="content-image" src="src/assets/home-page.jpg" alt="" />
+            <img className="content-image" src="src/assets/smart-home.jpg" alt="" />
             </div>
             </div>
 
             <div className="services-section-2">
             <div className ="content">
-                 <img className="content-image" src="src/assets/commercial-floor.jpg" alt="" />
+                 <img className="content-image" src="src/assets/commercial-cctv.jpg" alt="" />
             <div className="services-text">
                  <h2 className="sub-head-1">Commercial.</h2>
             <h2 className="sub-head-2">Business Security Systems.</h2>

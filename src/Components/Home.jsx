@@ -14,11 +14,12 @@ const Home = () => {
     <section className="about-container">
             <div className="about-head">
             <h1>About us.</h1>
-             <p>
-      At STAG Systems, we specialise in high-quality security and smart home installations. 
-      From advanced CCTV systems to fully integrated smart living solutions, we design and install 
-      systems that make your home safer, smarter, and easier to control.
-    </p>
+            <p> 
+                At STAG Systems, we design and install high-quality security and smart home systems 
+                tailored to your property. From advanced CCTV to fully integrated smart living, 
+                our solutions are built to keep your home secure, connected, and easy to control — 
+                with clean installs and reliable performance you can trust.
+                </p>
             </div>
             <div className="about-section">
             <div className ="content">
@@ -39,7 +40,7 @@ const Home = () => {
           </p>
                 </div>
             </div>
-            <img className="content-image" src="src/assets/home-page.jpg" alt="" />
+            <img className="content-image" src="src/assets/commercial-cctv.jpg" alt="" />
             </div>
             </div>
     </section>

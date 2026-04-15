@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';  // Import Link from react-router-dom
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -8,10 +8,14 @@ const Navigation = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const closeMenu = () => {
+    setMenuOpen(false); // Close the menu when a link is clicked
+  };
+
   return (
     <nav className="navbar">
       <div className="logo">
-        <img src="src/assets/Stagg__1_-removebg-preview.png" alt="Stagg Flooring Logo" className="logo-img" />
+        <img src="src/assets/main-logo-2.png" alt="Stagg Flooring Logo" className="logo-img" />
       </div>
 
       {/* Hamburger Icon */}
@@ -22,10 +26,9 @@ const Navigation = () => {
       </div>
 
       <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
-        <li><Link to="/">Home</Link></li> {/* Use Link to handle navigation */}
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/services">Services</Link></li>
-        <li><a rel="noreferrer" target="_blank" href="mailto:ga.nicholson@outlook.com">Contact</a></li>
+        <li><Link to="/" onClick={closeMenu}>Home</Link></li>
+        <li><Link to="/services" onClick={closeMenu}>Services</Link></li>
+        <li><a rel="noreferrer" target="_blank" href="mailto:ga.nicholson@outlook.com" onClick={closeMenu}>Contact</a></li>
       </ul>
     </nav>
   );

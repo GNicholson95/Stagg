@@ -9,10 +9,10 @@ const Footer = () => {
               {/* Grid column */}
               <div className="footer-column">
                 <h6 className="footer-heading">
-                  <i className="fas fa-gem footer-icon"></i>Stagg flooring
+                  <i className="fas fa-gem footer-icon"></i>STAG Systems
                 </h6>
                 <p className="footer-description">
-                  Flooring specialists residing in the East Midlands.
+                  Security specialists residing in the Gold Coast.
                 </p>
               </div>
   
@@ -20,7 +20,7 @@ const Footer = () => {
               <div className="footer-column">
                 <h6 className="footer-heading">Services</h6>
                 <p>
-                  <a href="#!" className="footer-link">Domestic</a>
+                  <a href="#!" className="footer-link">Residential</a>
                 </p>
                 <p>
                   <a href="#!" className="footer-link">Commercial</a>
@@ -30,11 +30,11 @@ const Footer = () => {
               {/* Grid column */}
               <div className="footer-column">
                 <h6 className="footer-heading">Contact</h6>
-                <p><i className="fas fa-home footer-icon"></i> Nottingham, England</p>
+                <p><i className="fas fa-home footer-icon"></i> Maudsland, QLD</p>
                 <a className="footer-link" href="mailto:ga.nicholson@outlook.com">
                   <p><i className="fas fa-envelope footer-icon"></i> ga.nicholson@outlook.com</p>
                 </a>
-                <p><i className="fas fa-phone footer-icon"></i> 07947 899 655</p>
+                <p><i className="fas fa-phone footer-icon"></i> 0426-525-426</p>
               </div>
             </div>
           </div>

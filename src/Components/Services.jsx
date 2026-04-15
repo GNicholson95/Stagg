@@ -4,43 +4,69 @@ const Services = () => {
         <section className="services-container">
             <div className="services-head">
             <h1>Our services</h1>
-            <p>At stagg We specialize in providing high-quality flooring solutions for both domestic and commercial spaces.  
-                </p>
-                <p>Our services include expert installation of carpets, luxury vinyl tiles (LVT), 
-                laminate, and hardwood flooring, ensuring a perfect fit and finish every time.
-                </p>
-                <p>We also offer professional screeding to prepare your subfloor for a flawless result.
-                </p>
-                <p>Whether you're upgrading your home or outfitting a commercial property, we deliver durable and stylish flooring to suit your needs.</p>
+                    <p>
+          At STAG Systems, we provide professional security and smart home installations 
+          designed to be reliable, easy to use, and built to last.
+        </p>
+        <p>
+          From high-definition CCTV systems to fully integrated smart home setups, 
+          we deliver clean, high-quality installations tailored to your property.
+        </p>
+        <p>
+          Whether you're securing your home or upgrading your living space with smart technology, 
+          we make the process simple and hassle-free.
+        </p>
+
             </div>
             <div className="services-section">
             <div className ="content">
             <div className="services-text">
-                <h2 className="sub-head-1">Domestic.</h2>
-                <h2 className="sub-head-2">In your home.</h2>
+              <h2 className="sub-head-1">Residential.</h2>
+                <h2 className="sub-head-2">Security & Smart Living.</h2>
                 <div className="services-paragraph">
-                    <p>Transform your home with our premium flooring solutions that blend style, comfort, and practicality.</p>
-                    <p>Whether it's the warmth and elegance of hardwood, the modern versatility of luxury vinyl tiles (LVT), or the cozy appeal of a plush carpet, our flooring options are designed to enhance your living spaces.</p>
-                    <p>Not only do they elevate the aesthetic of your home, but they also improve functionality, durability, and ease of maintenance.</p>
-                    <p>Let us help you create a welcoming, beautiful environment that you and your family will love for years to come.</p>
+                    <p>
+            We provide tailored CCTV and security solutions designed to protect what matters most. 
+            Whether it’s a single-camera setup or a full property system, we install reliable, 
+            high-performance equipment with clean, professional finishes.
+          </p>
+
+          <p>
+            Beyond security, we bring homes to life with smart technology — including lighting, 
+            alarms, cameras, and remote access systems — all seamlessly integrated and easy to use. 
+            Our focus is simple: clean installs, dependable systems, and a premium result every time.
+          </p>
                 </div>
             </div>
-            <img src="src/assets/home-page.jpg" alt="" />
+            <img className="content-image" src="src/assets/home-page.jpg" alt="" />
             </div>
             </div>
 
             <div className="services-section-2">
             <div className ="content">
-                 <img src="src/assets/commercial-floor.jpg" alt="" />
+                 <img className="content-image" src="src/assets/commercial-floor.jpg" alt="" />
             <div className="services-text">
-                <h2 className="sub-head-1">Commercial.</h2>
-                <h2 className="sub-head-2">At your business.</h2>
+                 <h2 className="sub-head-1">Commercial.</h2>
+            <h2 className="sub-head-2">Business Security Systems.</h2>
                 <div className="services-paragraph">
-                    <p>Transform your commercial space with our specialized flooring solutions, including durable carpet tiles, luxury vinyl tiles (LVT), hardwood, and commercial welded vinyl.</p>
-                    <p>Our carpet tiles are perfect for high-traffic areas, offering easy maintenance and flexibility in design.</p>
-                    <p>LVT provides a stylish, resilient option for any environment, while hardwood adds a touch of elegance to offices or hospitality settings.</p>
-                    <p>For seamless and robust flooring, our commercial welded vinyl is ideal for high-demand areas, providing a hygienic, water-resistant solution.</p>
-                    <p>Whether you're designing office spaces, retail outlets, or other commercial venues, our flooring solutions deliver lasting quality, performance, and aesthetic appeal.</p>
+                  <p>
+                Secure your business with professional-grade CCTV systems built 
+                for reliability and performance in high-demand environments.
+              </p>
+
+              <p>
+                We install multi-camera systems with remote access, allowing you 
+                to monitor your premises from anywhere at any time.
+              </p>
+
+              <p>
+                Our solutions are ideal for retail spaces, offices, warehouses, 
+                and commercial properties where security and visibility are critical.
+              </p>
+
+              <p>
+                With clean installations and dependable systems, we help you 
+                protect your business without disruption.
+              </p>
                 </div>
             </div>
             </div>

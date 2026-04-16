@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import mainLogo from '../../assets/main-logo-2.png';
 
 const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,7 +16,7 @@ const Navigation = () => {
   return (
     <nav className="navbar">
       <div className="logo">
-        <img src="src/assets/main-logo-2.png" alt="Stagg Flooring Logo" className="logo-img" />
+        <img src={mainLogo} alt="STAG Systems logo" className="logo-img" />
       </div>
 
       {/* Hamburger Icon */}

@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import Footer from "./Footer";
+import smartHomeImage from "../assets/smart-home.jpg";
+import commercialCctvImage from "../assets/commercial-cctv.jpg";
 
 const Services = () => {
     useEffect(() => {
@@ -43,13 +45,13 @@ const Services = () => {
           </p>
                 </div>
             </div>
-            <img className="content-image" src="src/assets/smart-home.jpg" alt="" />
+            <img className="content-image" src={smartHomeImage} alt="Smart home installation" />
             </div>
             </div>
 
             <div className="services-section-2">
             <div className ="content">
-                 <img className="content-image" src="src/assets/commercial-cctv.jpg" alt="" />
+                 <img className="content-image" src={commercialCctvImage} alt="Commercial CCTV system" />
             <div className="services-text">
                  <h2 className="sub-head-1">Commercial.</h2>
             <h2 className="sub-head-2">Business Security Systems.</h2>

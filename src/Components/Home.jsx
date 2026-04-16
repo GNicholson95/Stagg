@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
+import commercialCctvImage from "../assets/commercial-cctv.jpg";
 
 const Home = () => {
 
@@ -36,7 +37,7 @@ const Home = () => {
           </p>
                 </div>
             </div>
-            <img className="content-image" src="src/assets/commercial-cctv.jpg" alt="" />
+            <img className="content-image" src={commercialCctvImage} alt="Security camera installation" />
             </div>
             </div>
     </section>

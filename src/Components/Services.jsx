@@ -1,5 +1,11 @@
+import { useEffect } from "react";
 import Footer from "./Footer";
+
 const Services = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <section className="services-container">
             <div className="services-head">

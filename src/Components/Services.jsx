@@ -11,20 +11,26 @@ const Services = () => {
     return (
         <section className="services-container">
             <div className="services-head">
-            <h1>Our services</h1>
-                    <p>
-          At STAG Systems, we provide professional security and smart home installations 
-          designed to be reliable, easy to use, and built to last.
-        </p>
-        <p>
-          From high-definition CCTV systems to fully integrated smart home setups, 
-          we deliver clean, high-quality installations tailored to your property.
-        </p>
-        <p>
-          Whether you're securing your home or upgrading your living space with smart technology, 
-          we make the process simple and hassle-free.
-        </p>
-
+              <div className="services-head-inner">
+                <div className="services-head-title">
+                  <span className="section-eyebrow">STAG Systems</span>
+                  <h1>Our services</h1>
+                </div>
+                <div className="services-head-copy">
+                  <p>
+                    At STAG Systems, we provide professional security and smart home installations
+                    designed to be reliable, easy to use, and built to last.
+                  </p>
+                  <p>
+                    From high-definition CCTV systems to fully integrated smart home setups, we
+                    deliver clean, high-quality installations tailored to your property.
+                  </p>
+                  <p>
+                    Whether you&apos;re securing your home or upgrading your living space with smart
+                    technology, we make the process simple and hassle-free.
+                  </p>
+                </div>
+              </div>
             </div>
             <div className="services-section">
             <div className ="content">
@@ -45,13 +51,17 @@ const Services = () => {
           </p>
                 </div>
             </div>
-            <img className="content-image" src={smartHomeImage} alt="Smart home installation" />
+            <div className="service-image-frame">
+            <img className="content-image service-image" src={smartHomeImage} alt="Smart home installation" />
+            </div>
             </div>
             </div>
 
             <div className="services-section-2">
             <div className ="content">
-                 <img className="content-image" src={commercialCctvImage} alt="Commercial CCTV system" />
+                 <div className="service-image-frame">
+                 <img className="content-image service-image" src={commercialCctvImage} alt="Commercial CCTV system" />
+                 </div>
             <div className="services-text">
                  <h2 className="sub-head-1">Commercial.</h2>
             <h2 className="sub-head-2">Business Security Systems.</h2>

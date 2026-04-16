@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
-import commercialCctvImage from "../assets/commercial-cctv.jpg";
+import smartHomeImage from "../assets/smart-home.jpg";
 
 const Home = () => {
 
@@ -10,7 +10,9 @@ const Home = () => {
       {/* Hero Text */}
       <div className="hero">
         <h1>
-        STAG Systems. Security & Smart Homes.
+          <span className="hero-kicker">STAG Systems</span>
+          <span className="hero-line">Security</span>
+          <span className="hero-line hero-line-accent">&amp; Smart Homes</span>
         </h1>
       </div>
     </section>
@@ -37,7 +39,13 @@ const Home = () => {
           </p>
                 </div>
             </div>
-            <img className="content-image" src={commercialCctvImage} alt="Security camera installation" />
+            <div className="feature-image-wrap">
+              <img
+                className="content-image feature-image"
+                src={smartHomeImage}
+                alt="Smart home security and automation installation"
+              />
+            </div>
             </div>
             </div>
     </section>

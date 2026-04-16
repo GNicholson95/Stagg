@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
     return (
       <footer id="footer" className="footer-container">
@@ -20,10 +22,10 @@ const Footer = () => {
               <div className="footer-column">
                 <h6 className="footer-heading">Services</h6>
                 <p>
-                  <a href="#!" className="footer-link">Residential</a>
+                  <Link to="/services" className="footer-link">Residential</Link>
                 </p>
                 <p>
-                  <a href="#!" className="footer-link">Commercial</a>
+                  <Link to="/services" className="footer-link">Commercial</Link>
                 </p>
               </div>
   

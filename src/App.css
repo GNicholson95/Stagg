@@ -15,6 +15,24 @@ html, body {
     box-sizing: border-box; /* Include padding in element dimensions */
 }
 
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -48px;
+  z-index: 2000;
+  padding: 0.75rem 1rem;
+  background-color: #f39c12;
+  color: #111111;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
 /*
     --primary-100:#2E2E2E;
     --primary-200:#575757;
@@ -31,7 +49,7 @@ html, body {
   /* home section */
   
   .home-container {
-    height: calc(100vh - 100px);
+    height: calc(100vh - 90px);
     width: 100%; /* Full width */
     overflow: hidden;
     display: flex;
@@ -87,6 +105,52 @@ html, body {
     margin-top: -0.08em;
   }
 
+  .hero-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-actions .primary-button,
+  .hero-secondary-button {
+    min-height: 52px;
+    padding: 0.85rem 1.4rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .hero-actions .primary-button {
+    box-shadow:
+      inset 0 -2px 0 rgba(0, 0, 0, 0.14),
+      0 10px 24px rgba(0, 0, 0, 0.18);
+  }
+
+  .hero-secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0.85rem 1.4rem;
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    background: rgba(12, 12, 12, 0.32);
+    color: #f4f4f4;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    backdrop-filter: blur(4px);
+    transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .hero-secondary-button:hover {
+    transform: translateY(-2px);
+    border-color: rgba(243, 156, 18, 0.8);
+    background: rgba(243, 156, 18, 0.08);
+    color: #ffffff;
+  }
+
   .fadeIn{
     opacity: 0;
     animation: fadeIn 0.5s ease-in-out forwards;
@@ -119,6 +183,11 @@ html, body {
     .hero-line {
       font-size: clamp(1.8rem, 7vw, 3rem);
     }
+
+    .hero-actions {
+      margin-top: 1.25rem;
+      gap: 0.75rem;
+    }
   }
 
   @media (max-width: 480px) {
@@ -144,6 +213,20 @@ html, body {
 
     .hero-line {
       font-size: clamp(1.55rem, 8vw, 2.2rem);
+    }
+
+    .hero-actions {
+      margin-top: 1rem;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .hero-actions .primary-button,
+    .hero-secondary-button {
+      width: 100%;
+      max-width: 260px;
+      font-size: 0.88rem;
     }
   }
   .fadeOut {
@@ -260,6 +343,8 @@ html, body {
     linear-gradient(180deg, rgba(255, 255, 255, 0.015), transparent 25%),
     #2f2f2f;
   border-bottom: 1px solid rgba(243, 156, 18, 0.12);
+  content-visibility: auto;
+  contain-intrinsic-size: 900px;
 }
 
 .about-text{
@@ -331,6 +416,8 @@ html, body {
 .home-cta {
   width: 100%;
   animation: fadeIn 2s ease-in-out forwards;
+  content-visibility: auto;
+  contain-intrinsic-size: 700px;
 }
 
 .home-accreditation {
@@ -660,6 +747,8 @@ html, body {
       linear-gradient(180deg, rgba(255, 255, 255, 0.015), transparent 20%),
       #262626;
     border-bottom: 1px solid rgba(243, 156, 18, 0.12);
+    content-visibility: auto;
+    contain-intrinsic-size: 900px;
 }
 
 .services-text{
@@ -706,6 +795,8 @@ html, body {
     background:
       linear-gradient(180deg, rgba(243, 156, 18, 0.03), transparent 18%),
       #1f1f1f;
+    content-visibility: auto;
+    contain-intrinsic-size: 900px;
 }
 
 /* services section */

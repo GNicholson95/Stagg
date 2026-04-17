@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gnicholson95.github.io/Stagg/sitemap.xml

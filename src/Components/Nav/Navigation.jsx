@@ -14,17 +14,32 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" aria-label="Primary navigation">
       <div className="logo">
-        <img src={mainLogo} alt="STAG Systems logo" className="logo-img" />
+        <Link to="/" onClick={closeMenu} aria-label="Go to STAG Systems home page">
+          <img
+            src={mainLogo}
+            alt="STAG Systems logo"
+            className="logo-img"
+            width="500"
+            height="500"
+            decoding="async"
+          />
+        </Link>
       </div>
 
       {/* Hamburger Icon */}
-      <div className={`hamburger ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>
+      <button
+        type="button"
+        className={`hamburger ${menuOpen ? 'active' : ''}`}
+        onClick={toggleMenu}
+        aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+        aria-expanded={menuOpen}
+      >
         <div></div>
         <div></div>
         <div></div>
-      </div>
+      </button>
 
       <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
         <li><Link to="/" onClick={closeMenu}>Home</Link></li>

@@ -16,6 +16,14 @@ const Home = () => {
           <span className="hero-line">Security</span>
           <span className="hero-line hero-line-accent">&amp; Smart Homes</span>
         </h1>
+        <div className="hero-actions">
+          <a className="primary-button" href="mailto:ga.nicholson@outlook.com?subject=Free%20Quote%20Request">
+            Get Free Quote
+          </a>
+          <a className="hero-secondary-button" href="tel:0426525426">
+            Call 0426 525 426
+          </a>
+        </div>
       </div>
     </section>
     <section className="about-container">
@@ -34,7 +42,7 @@ const Home = () => {
                 <h2 className="sub-head-1">Security made simple</h2>
                 <div className="about-paragraph">
                    <p>
-            Choosing the right system can feel overwhelming. At STAG Systems, we make it easy by
+           Choosing the right system can feel overwhelming. At STAG Systems, we make it easy by
             helping you understand your options and installing a solution that is practical,
             reliable, and easy to manage. Our goal is to give you confidence in your security and
             convenience in your day-to-day life.
@@ -46,6 +54,11 @@ const Home = () => {
                 className="content-image feature-image"
                 src={smartHomeImage}
                 alt="Smart home security and automation installation"
+                width="3888"
+                height="2592"
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
               />
             </div>
             </div>
@@ -71,6 +84,7 @@ const Home = () => {
               href={hikvisionCertPdf}
               target="_blank"
               rel="noreferrer"
+              aria-label="View Hikvision certification PDF in a new tab"
             >
               View certification
             </a>
@@ -81,6 +95,11 @@ const Home = () => {
             className="accreditation-badge"
             src={hikvisionCertImage}
             alt="Hikvision certification badge"
+            width="1866"
+            height="1322"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
           />
         </div>
       </div>
@@ -116,7 +135,9 @@ const Home = () => {
           </article>
         </div>
         <div className="services-preview-action">
-          <Link to="/services" className="primary-button">View all services</Link>
+          <Link to="/services" className="primary-button" aria-label="View all STAG Systems services">
+            View all services
+          </Link>
         </div>
       </div>
     </section>

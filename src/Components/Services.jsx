@@ -52,7 +52,16 @@ const Services = () => {
                 </div>
             </div>
             <div className="service-image-frame">
-            <img className="content-image service-image" src={smartHomeImage} alt="Smart home installation" />
+            <img
+              className="content-image service-image"
+              src={smartHomeImage}
+              alt="Smart home installation"
+              width="3888"
+              height="2592"
+              loading="lazy"
+              decoding="async"
+              fetchPriority="low"
+            />
             </div>
             </div>
             </div>
@@ -60,7 +69,16 @@ const Services = () => {
             <div className="services-section-2">
             <div className ="content">
                  <div className="service-image-frame">
-                 <img className="content-image service-image" src={commercialCctvImage} alt="Commercial CCTV system" />
+                 <img
+                   className="content-image service-image"
+                   src={commercialCctvImage}
+                   alt="Commercial CCTV system"
+                   width="3464"
+                   height="2301"
+                   loading="lazy"
+                   decoding="async"
+                   fetchPriority="low"
+                 />
                  </div>
             <div className="services-text">
                  <h2 className="sub-head-1">Commercial.</h2>

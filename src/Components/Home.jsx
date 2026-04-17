@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import smartHomeImage from "../assets/smart-home.jpg";
+import hikvisionCertImage from "../assets/hikvision-cert.png";
+import hikvisionCertPdf from "../assets/hikvision.pdf";
 
 const Home = () => {
 
@@ -48,6 +50,40 @@ const Home = () => {
             </div>
             </div>
             </div>
+    </section>
+    <section className="home-accreditation">
+      <div className="home-section-inner accreditation-layout">
+        <div className="accreditation-copy">
+          <span className="section-eyebrow">Accreditation</span>
+          <h2>Hikvision certified installation expertise.</h2>
+          <p>
+            STAG Systems holds Hikvision certification, giving you added confidence that your
+            security system is being specified and installed with recognised product knowledge and
+            industry-standard best practice.
+          </p>
+          <p>
+            For clients, that means dependable recommendations, cleaner integration, and greater
+            confidence in the cameras and surveillance hardware protecting your property.
+          </p>
+          <div className="accreditation-actions">
+            <a
+              className="primary-button"
+              href={hikvisionCertPdf}
+              target="_blank"
+              rel="noreferrer"
+            >
+              View certification
+            </a>
+          </div>
+        </div>
+        <div className="accreditation-card">
+          <img
+            className="accreditation-badge"
+            src={hikvisionCertImage}
+            alt="Hikvision certification badge"
+          />
+        </div>
+      </div>
     </section>
     <section className="home-services-preview">
       <div className="home-section-inner">

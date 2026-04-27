@@ -60,7 +60,6 @@ const Services = () => {
               height="2592"
               loading="lazy"
               decoding="async"
-              fetchPriority="low"
             />
             </div>
             </div>
@@ -77,7 +76,6 @@ const Services = () => {
                    height="2301"
                    loading="lazy"
                    decoding="async"
-                   fetchPriority="low"
                  />
                  </div>
             <div className="services-text">

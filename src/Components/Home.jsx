@@ -58,7 +58,6 @@ const Home = () => {
                 height="2592"
                 loading="lazy"
                 decoding="async"
-                fetchPriority="low"
               />
             </div>
             </div>
@@ -99,7 +98,6 @@ const Home = () => {
             height="1322"
             loading="lazy"
             decoding="async"
-            fetchPriority="low"
           />
         </div>
       </div>

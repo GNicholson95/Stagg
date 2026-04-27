@@ -10,9 +10,9 @@ const Footer = () => {
             <div className="footer-row">
               {/* Grid column */}
               <div className="footer-column">
-                <h6 className="footer-heading">
+                <h2 className="footer-heading">
                   <i className="fas fa-gem footer-icon"></i>STAG Systems
-                </h6>
+                </h2>
                 <p className="footer-description">
                   Security and smart home specialists servicing all of the Gold Coast and
                   surrounding areas.
@@ -21,7 +21,7 @@ const Footer = () => {
   
               {/* Grid column */}
               <div className="footer-column">
-                <h6 className="footer-heading">Services</h6>
+                <h2 className="footer-heading">Services</h2>
                 <p>
                   <Link to="/services" className="footer-link">Residential</Link>
                 </p>
@@ -32,7 +32,7 @@ const Footer = () => {
   
               {/* Grid column */}
               <div className="footer-column">
-                <h6 className="footer-heading">Contact</h6>
+                <h2 className="footer-heading">Contact</h2>
                 <p><i className="fas fa-home footer-icon"></i> Maudsland, QLD</p>
                 <a className="footer-link" href="mailto:ga.nicholson@outlook.com" aria-label="Email STAG Systems">
                   <i className="fas fa-envelope footer-icon"></i> ga.nicholson@outlook.com

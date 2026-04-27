@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FaEnvelope, FaFacebookF, FaGem, FaHome, FaInstagram, FaPhone } from "react-icons/fa";
 
 const Footer = () => {
     return (
@@ -11,7 +12,7 @@ const Footer = () => {
               {/* Grid column */}
               <div className="footer-column">
                 <h2 className="footer-heading">
-                  <i className="fas fa-gem footer-icon"></i>STAG Systems
+                  <FaGem className="footer-icon" aria-hidden="true" />STAG Systems
                 </h2>
                 <p className="footer-description">
                   Security and smart home specialists servicing all of the Gold Coast and
@@ -33,11 +34,11 @@ const Footer = () => {
               {/* Grid column */}
               <div className="footer-column">
                 <h2 className="footer-heading">Contact</h2>
-                <p><i className="fas fa-home footer-icon"></i> Maudsland, QLD</p>
+                <p><FaHome className="footer-icon" aria-hidden="true" /> Maudsland, QLD</p>
                 <a className="footer-link" href="mailto:ga.nicholson@outlook.com" aria-label="Email STAG Systems">
-                  <i className="fas fa-envelope footer-icon"></i> ga.nicholson@outlook.com
+                  <FaEnvelope className="footer-icon" aria-hidden="true" /> ga.nicholson@outlook.com
                 </a>
-                <p><i className="fas fa-phone footer-icon"></i> 0426-525-426</p>
+                <p><FaPhone className="footer-icon" aria-hidden="true" /> 0426-525-426</p>
               </div>
             </div>
           </div>
@@ -47,10 +48,10 @@ const Footer = () => {
         <div className="footer-bottom">
           <section className="footer-social-media">
             <a className="social-btn" href="https://www.facebook.com/george.nicholson.7921" target="_blank" rel="noreferrer" role="button" aria-label="Visit STAG Systems on Facebook">
-              <i className="fab fa-facebook-f"></i>
+              <FaFacebookF aria-hidden="true" />
             </a>
             <a className="social-btn" href="https://www.instagram.com/xgeorgenicholson/" target="_blank" rel="noreferrer" role="button" aria-label="Visit STAG Systems on Instagram">
-              <i className="fab fa-instagram"></i>
+              <FaInstagram aria-hidden="true" />
             </a>
             <div className="social-text">
               <span>Get connected with us on social networks:</span>

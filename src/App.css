@@ -1346,7 +1346,12 @@ html, body {
   }
   
   .footer-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
     margin-right: 10px;
+    vertical-align: -0.125em;
+    flex-shrink: 0;
   }
   
   .footer-link {
@@ -1376,12 +1381,21 @@ html, body {
   }
   
   .social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background: transparent;
     border: 1px solid rgba(248, 249, 250, 0.35);
     border-radius: 0;
     padding: 10px 12px;
     color: #f8f9fa;
     transition: all 0.3s ease;
+  }
+
+  .social-btn svg {
+    display: block;
+    width: 1em;
+    height: 1em;
   }
   
   .social-btn:hover {

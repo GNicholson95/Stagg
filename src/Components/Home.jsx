@@ -1,162 +1,229 @@
-import { Link } from "react-router-dom";
-import Footer from "./Footer";
-import smartHomeImage from "../assets/smart-home.jpg";
-import hikvisionCertImage from "../assets/hikvision-cert.png";
-import hikvisionCertPdf from "../assets/hikvision.pdf";
+import { Link } from 'react-router-dom';
+import {
+  FiArrowRight,
+  FiCamera,
+  FiCheck,
+  FiDatabase,
+  FiMapPin,
+  FiMonitor,
+  FiRadio,
+} from 'react-icons/fi';
+import commercialCctvImage from '../assets/commercial-cctv.jpg';
+import hikvisionCertImage from '../assets/hikvision-cert.png';
+import hikvisionCertPdf from '../assets/hikvision.pdf';
 
-const Home = () => {
+const capabilities = [
+  {
+    number: '01',
+    icon: FiMonitor,
+    title: 'Audio visual',
+    copy: 'Displays, TV distribution, digital signage and integrated AV built around how the space is actually used.',
+    tags: ['Displays', 'Distribution', 'Signage'],
+  },
+  {
+    number: '02',
+    icon: FiDatabase,
+    title: 'Data & networks',
+    copy: 'Structured data cabling, Wi-Fi infrastructure and tidy network upgrades for dependable connectivity.',
+    tags: ['Structured data', 'Wi-Fi', 'Networking'],
+  },
+  {
+    number: '03',
+    icon: FiRadio,
+    title: 'Telecommunications',
+    copy: 'Signal distribution, satellite and communications infrastructure installed, upgraded and fault-found.',
+    tags: ['Satellite', 'Signal', 'Fault finding'],
+  },
+  {
+    number: '04',
+    icon: FiCamera,
+    title: 'CCTV & security',
+    copy: 'Clear camera coverage, recording and remote viewing systems for residential and commercial properties.',
+    tags: ['CCTV', 'Recording', 'Remote access'],
+  },
+];
 
+const process = [
+  ['01', 'Understand the site', 'We start with the space, the existing infrastructure and what the system needs to achieve.'],
+  ['02', 'Specify the right setup', 'A practical scope with compatible equipment—without adding complexity that the job does not need.'],
+  ['03', 'Install it cleanly', 'Neat cable paths, considered placement and a clear handover so the system is easy to use.'],
+];
+
+function Home() {
   return (
-  <>
-    <section className="home-container">
-      {/* Hero Text */}
-      <div className="hero">
-        <h1>
-          <span className="hero-kicker">STAG Systems</span>
-          <span className="hero-line">Security</span>
-          <span className="hero-line hero-line-accent">&amp; Smart Homes</span>
-        </h1>
-        <div className="hero-actions">
-          <a className="primary-button" href="mailto:ga.nicholson@outlook.com?subject=Free%20Quote%20Request">
-            Get Free Quote
-          </a>
-          <a className="hero-secondary-button" href="tel:0426525426">
-            Call 0426 525 426
-          </a>
+    <>
+      <section className="hero-section">
+        <div className="page-width hero-layout">
+          <div className="hero-copy">
+            <p className="eyebrow">AV · Data · Telecoms · CCTV</p>
+            <h1>
+              Connected systems.
+              <span>Built to work.</span>
+            </h1>
+            <p className="hero-intro">
+              Integrated technology for homes and businesses across the Gold Coast—from the cable
+              behind the wall to the system you use every day.
+            </p>
+            <div className="button-row">
+              <a
+                className="button button-primary"
+                href="mailto:ga.nicholson@outlook.com?subject=STAG%20Systems%20project%20enquiry"
+              >
+                Discuss a project <FiArrowRight aria-hidden="true" />
+              </a>
+              <Link className="button button-secondary" to="/services">
+                View capabilities
+              </Link>
+            </div>
+          </div>
+
+          <div className="hero-visual" aria-label="Commercial CCTV installation">
+            <img
+              src={commercialCctvImage}
+              alt="Commercial CCTV cameras mounted on a modern building"
+              width="3464"
+              height="2301"
+              fetchPriority="high"
+              decoding="async"
+            />
+            <div className="hero-visual-label">
+              <span><FiMapPin aria-hidden="true" /> Gold Coast, QLD</span>
+              <strong>Residential + commercial</strong>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
-    <section className="about-container">
-            <div className="about-head">
-            <h1>About us.</h1>
-            <p> 
-                At STAG Systems, we design and install high-quality security and smart home systems 
-                tailored to your property. From advanced CCTV to fully integrated smart living, 
-                our solutions are built to keep your home secure, connected, and easy to control — 
-                with clean installs and reliable performance you can trust.
-                </p>
+
+        <div className="page-width hero-trust" aria-label="Service highlights">
+          <span>One point of contact</span>
+          <span>Clean, considered installs</span>
+          <span>Hikvision certified</span>
+        </div>
+      </section>
+
+      <section className="section services-overview" id="capabilities">
+        <div className="page-width">
+          <div className="section-heading split-heading">
+            <div>
+              <p className="eyebrow">Capabilities</p>
+              <h2>One system partner.<br />Four connected disciplines.</h2>
             </div>
-            <div className="about-section">
-            <div className ="content">
-            <div className="about-text">
-                <h2 className="sub-head-1">Security made simple</h2>
-                <div className="about-paragraph">
-                   <p>
-           Choosing the right system can feel overwhelming. At STAG Systems, we make it easy by
-            helping you understand your options and installing a solution that is practical,
-            reliable, and easy to manage. Our goal is to give you confidence in your security and
-            convenience in your day-to-day life.
-          </p>
+            <p>
+              Technology works better when every part is considered together. STAG brings the
+              signal, network, display and security layers into one clean scope.
+            </p>
+          </div>
+
+          <div className="capability-grid">
+            {capabilities.map(({ number, icon: Icon, title, copy, tags }) => (
+              <article className="capability-card" key={title}>
+                <div className="card-topline">
+                  <span>{number}</span>
+                  <Icon aria-hidden="true" />
                 </div>
-            </div>
-            <div className="feature-image-wrap">
+                <h3>{title}</h3>
+                <p>{copy}</p>
+                <ul aria-label={`${title} examples`}>
+                  {tags.map((tag) => <li key={tag}>{tag}</li>)}
+                </ul>
+              </article>
+            ))}
+          </div>
+
+          <div className="section-link-row">
+            <Link className="text-link" to="/services">
+              Explore every capability <FiArrowRight aria-hidden="true" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section approach-section">
+        <div className="page-width approach-layout">
+          <div className="approach-copy">
+            <p className="eyebrow">How we work</p>
+            <h2>Less complexity.<br />A better finished system.</h2>
+            <p className="body-large">
+              No product dump and no disconnected trades. The job is planned as one system, with
+              practical recommendations and a finish that respects the property.
+            </p>
+          </div>
+
+          <ol className="process-list">
+            {process.map(([number, title, copy]) => (
+              <li key={number}>
+                <span className="process-number">{number}</span>
+                <div>
+                  <h3>{title}</h3>
+                  <p>{copy}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section className="section proof-section">
+        <div className="page-width proof-layout">
+          <div className="proof-card">
+            <div className="proof-badge-wrap">
               <img
-                className="content-image feature-image"
-                src={smartHomeImage}
-                alt="Smart home security and automation installation"
-                width="3888"
-                height="2592"
+                src={hikvisionCertImage}
+                alt="Hikvision certification"
+                width="1866"
+                height="1322"
                 loading="lazy"
                 decoding="async"
               />
             </div>
+            <div className="proof-copy">
+              <p className="eyebrow">Product training</p>
+              <h2>Hikvision certified.</h2>
+              <p>
+                Recognised product knowledge supports better camera selection, cleaner setup and a
+                more confident handover for your CCTV system.
+              </p>
+              <a className="text-link" href={hikvisionCertPdf} target="_blank" rel="noreferrer">
+                View certification <FiArrowRight aria-hidden="true" />
+              </a>
             </div>
-            </div>
-    </section>
-    <section className="home-accreditation">
-      <div className="home-section-inner accreditation-layout">
-        <div className="accreditation-copy">
-          <span className="section-eyebrow">Accreditation</span>
-          <h2>Hikvision certified installation expertise.</h2>
-          <p>
-            STAG Systems holds Hikvision certification, giving you added confidence that your
-            security system is being specified and installed with recognised product knowledge and
-            industry-standard best practice.
-          </p>
-          <p>
-            For clients, that means dependable recommendations, cleaner integration, and greater
-            confidence in the cameras and surveillance hardware protecting your property.
-          </p>
-          <div className="accreditation-actions">
+          </div>
+
+          <div className="fit-card">
+            <p className="eyebrow">A good fit for</p>
+            <h2>Homes, businesses and connected spaces.</h2>
+            <ul>
+              {[
+                'New installations and system upgrades',
+                'Fault finding and unreliable infrastructure',
+                'Projects spanning more than one technology',
+                'Clean handovers for owners and operators',
+              ].map((item) => (
+                <li key={item}><FiCheck aria-hidden="true" /> {item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="section final-cta">
+        <div className="page-width final-cta-inner">
+          <div>
+            <p className="eyebrow">Start a conversation</p>
+            <h2>Tell us what needs to connect.</h2>
+          </div>
+          <div className="final-cta-action">
+            <p>Share the site, the problem or the outcome you need. We’ll help define the next step.</p>
             <a
-              className="primary-button"
-              href={hikvisionCertPdf}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="View Hikvision certification PDF in a new tab"
+              className="button button-primary"
+              href="mailto:ga.nicholson@outlook.com?subject=STAG%20Systems%20project%20enquiry"
             >
-              View certification
+              Start your project <FiArrowRight aria-hidden="true" />
             </a>
           </div>
         </div>
-        <div className="accreditation-card">
-          <img
-            className="accreditation-badge"
-            src={hikvisionCertImage}
-            alt="Hikvision certification badge"
-            width="1866"
-            height="1322"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-      </div>
-    </section>
-    <section className="home-services-preview">
-      <div className="home-section-inner">
-        <div className="section-copy">
-          <h2>Services at a glance</h2>
-          <p>
-            We install practical security and smart home systems designed to be dependable, cleanly
-            fitted, and easy to use every day.
-          </p>
-        </div>
-        <div className="services-preview-grid">
-          <article className="service-preview-card">
-            <h3>Residential Security</h3>
-            <p>
-              CCTV, alarms, and remote access solutions tailored to your home and the way you live.
-            </p>
-          </article>
-          <article className="service-preview-card">
-            <h3>Smart Home Integration</h3>
-            <p>
-              Connected lighting, cameras, and controls that make your home simpler to manage.
-            </p>
-          </article>
-          <article className="service-preview-card">
-            <h3>Commercial CCTV</h3>
-            <p>
-              Reliable camera systems for offices, retail spaces, warehouses, and other business
-              environments.
-            </p>
-          </article>
-        </div>
-        <div className="services-preview-action">
-          <Link to="/services" className="primary-button" aria-label="View all STAG Systems services">
-            View all services
-          </Link>
-        </div>
-      </div>
-    </section>
-    <section className="home-cta">
-      <div className="home-section-inner cta-panel">
-        <div className="section-copy">
-          <h2>Ready to secure your property?</h2>
-          <p>
-            Whether you need a simple camera setup or a full smart security solution, we can help
-            you choose the right system and install it properly.
-          </p>
-        </div>
-        <div className="cta-actions">
-          <a className="primary-button" href="mailto:ga.nicholson@outlook.com">Email us</a>
-          <a className="secondary-button" href="tel:0426525426">Call 0426 525 426</a>
-        </div>
-      </div>
-    </section>
-    <Footer/>
+      </section>
     </>
   );
-};
+}
 
 export default Home;

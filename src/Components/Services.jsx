@@ -1,113 +1,120 @@
-import { useEffect } from "react";
-import Footer from "./Footer";
-import smartHomeImage from "../assets/smart-home.jpg";
-import commercialCctvImage from "../assets/commercial-cctv.jpg";
+import { FiArrowRight, FiCamera, FiCheck, FiDatabase, FiMonitor, FiRadio } from 'react-icons/fi';
 
-const Services = () => {
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+const services = [
+  {
+    number: '01',
+    icon: FiMonitor,
+    title: 'Audio visual',
+    intro: 'Clear, reliable AV for the way people actually use the space.',
+    copy: 'From a single professionally mounted display to multi-screen and signal-distribution systems, we focus on simple control, compatible equipment and a clean finish.',
+    includes: ['TV and display installation', 'Digital signage', 'Video and signal distribution', 'Commercial and hospitality AV'],
+  },
+  {
+    number: '02',
+    icon: FiDatabase,
+    title: 'Data & networks',
+    intro: 'The physical foundation for fast, dependable connectivity.',
+    copy: 'Structured cabling and network infrastructure are planned around coverage, capacity and serviceability—not just where the nearest cable can be run.',
+    includes: ['Structured data cabling', 'Data outlets and patching', 'Wi-Fi access point infrastructure', 'Network upgrades and fault finding'],
+  },
+  {
+    number: '03',
+    icon: FiRadio,
+    title: 'Telecommunications',
+    intro: 'Signal and communications systems that stay stable and easy to maintain.',
+    copy: 'We install, upgrade and diagnose television, satellite and communications distribution for residential and commercial environments.',
+    includes: ['Satellite and television systems', 'Signal distribution', 'Equipment replacement and upgrades', 'Diagnostics and fault finding'],
+  },
+  {
+    number: '04',
+    icon: FiCamera,
+    title: 'CCTV & security',
+    intro: 'Useful coverage, clear footage and straightforward access.',
+    copy: 'A good CCTV system starts with camera placement and the result you need. We specify and install systems for visibility, reliable recording and simple day-to-day use.',
+    includes: ['IP and analogue CCTV', 'NVR and recording systems', 'Remote viewing setup', 'System additions and upgrades'],
+  },
+];
 
-    return (
-        <section className="services-container">
-            <div className="services-head">
-              <div className="services-head-inner">
-                <div className="services-head-title">
-                  <span className="section-eyebrow">STAG Systems</span>
-                  <h1>Our services</h1>
-                </div>
-                <div className="services-head-copy">
-                  <p>
-                    At STAG Systems, we provide professional security and smart home installations
-                    designed to be reliable, easy to use, and built to last.
-                  </p>
-                  <p>
-                    From high-definition CCTV systems to fully integrated smart home setups, we
-                    deliver clean, high-quality installations tailored to your property.
-                  </p>
-                  <p>
-                    Whether you&apos;re securing your home or upgrading your living space with smart
-                    technology, we make the process simple and hassle-free.
-                  </p>
-                </div>
+function Services() {
+  return (
+    <>
+      <section className="services-hero">
+        <div className="page-width services-hero-layout">
+          <div>
+            <p className="eyebrow">Capabilities</p>
+            <h1>Technology that works as one system.</h1>
+          </div>
+          <div className="services-hero-copy">
+            <p>
+              STAG supports the infrastructure behind connected homes and businesses—from AV and
+              data to telecommunications and CCTV.
+            </p>
+            <p>
+              Bring us in for one part of the system or for a joined-up scope across several.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="service-detail-section">
+        <div className="page-width service-detail-list">
+          {services.map(({ number, icon: Icon, title, intro, copy, includes }) => (
+            <article className="service-detail" key={title}>
+              <div className="service-detail-marker">
+                <span>{number}</span>
+                <Icon aria-hidden="true" />
               </div>
-            </div>
-            <div className="services-section">
-            <div className ="content">
-            <div className="services-text">
-              <h2 className="sub-head-1">Residential.</h2>
-                <h2 className="sub-head-2">Security & Smart Living.</h2>
-                <div className="services-paragraph">
-                    <p>
-            We provide tailored CCTV and security solutions designed to protect what matters most. 
-            Whether it’s a single-camera setup or a full property system, we install reliable, 
-            high-performance equipment with clean, professional finishes.
-          </p>
+              <div className="service-detail-title">
+                <h2>{title}</h2>
+                <p>{intro}</p>
+              </div>
+              <div className="service-detail-body">
+                <p>{copy}</p>
+                <ul>
+                  {includes.map((item) => (
+                    <li key={item}><FiCheck aria-hidden="true" /> {item}</li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
 
-          <p>
-            Beyond security, we bring homes to life with smart technology — including lighting, 
-            alarms, cameras, and remote access systems — all seamlessly integrated and easy to use. 
-            Our focus is simple: clean installs, dependable systems, and a premium result every time.
-          </p>
-                </div>
-            </div>
-            <div className="service-image-frame">
-            <img
-              className="content-image service-image"
-              src={smartHomeImage}
-              alt="Smart home installation"
-              width="3888"
-              height="2592"
-              loading="lazy"
-              decoding="async"
-            />
-            </div>
-            </div>
-            </div>
+      <section className="section service-context-section">
+        <div className="page-width context-grid">
+          <div>
+            <p className="eyebrow">Where we work</p>
+            <h2>Residential and commercial projects across the Gold Coast.</h2>
+          </div>
+          <div className="context-list">
+            <span>Homes</span>
+            <span>Offices</span>
+            <span>Retail</span>
+            <span>Hospitality</span>
+          </div>
+        </div>
+      </section>
 
-            <div className="services-section-2">
-            <div className ="content">
-                 <div className="service-image-frame">
-                 <img
-                   className="content-image service-image"
-                   src={commercialCctvImage}
-                   alt="Commercial CCTV system"
-                   width="3464"
-                   height="2301"
-                   loading="lazy"
-                   decoding="async"
-                 />
-                 </div>
-            <div className="services-text">
-                 <h2 className="sub-head-1">Commercial.</h2>
-            <h2 className="sub-head-2">Business Security Systems.</h2>
-                <div className="services-paragraph">
-                  <p>
-                Secure your business with professional-grade CCTV systems built 
-                for reliability and performance in high-demand environments.
-              </p>
+      <section className="section final-cta">
+        <div className="page-width final-cta-inner">
+          <div>
+            <p className="eyebrow">Plan the right scope</p>
+            <h2>Not sure which service it falls under?</h2>
+          </div>
+          <div className="final-cta-action">
+            <p>That is exactly where an integrated systems approach helps. Start with the outcome you need.</p>
+            <a
+              className="button button-primary"
+              href="mailto:ga.nicholson@outlook.com?subject=STAG%20Systems%20service%20enquiry"
+            >
+              Discuss your project <FiArrowRight aria-hidden="true" />
+            </a>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
 
-              <p>
-                We install multi-camera systems with remote access, allowing you 
-                to monitor your premises from anywhere at any time.
-              </p>
-
-              <p>
-                Our solutions are ideal for retail spaces, offices, warehouses, 
-                and commercial properties where security and visibility are critical.
-              </p>
-
-              <p>
-                With clean installations and dependable systems, we help you 
-                protect your business without disruption.
-              </p>
-                </div>
-            </div>
-            </div>
-            </div>
-            <Footer/>
-        </section>
-    );
-  };
-  
-  export default Services;
+export default Services;

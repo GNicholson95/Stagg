@@ -1,41 +1,44 @@
 import { useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import Footer from './Components/Footer';
+import Home from './Components/Home';
 import Navigation from './Components/Nav/Navigation';
-import Home from './Components/Home'
-import Services from './Components/Services'
-import './App.css'
+import Services from './Components/Services';
+import './App.css';
 
-function SeoManager() {
+const metadata = {
+  '/': {
+    title: 'STAG Systems | AV, Data, Telecommunications & CCTV',
+    description:
+      'Connected technology systems for homes and businesses across the Gold Coast. Audio visual, structured data, telecommunications and CCTV installation.',
+  },
+  '/services': {
+    title: 'Capabilities | STAG Systems',
+    description:
+      'Explore STAG Systems capabilities across audio visual, data networks, telecommunications and CCTV for residential and commercial environments.',
+  },
+};
+
+function PageManager() {
   const location = useLocation();
 
   useEffect(() => {
-    const metadata = {
-      '/': {
-        title: 'STAG Systems | Security systems and smart homes',
-        description:
-          'Professional CCTV, smart home integration, and Hikvision-certified security installation services from STAG Systems.',
-      },
-      '/services': {
-        title: 'Services | STAG Systems',
-        description:
-          'Explore residential security, smart home integration, and commercial CCTV installation services from STAG Systems.',
-      },
-    };
-
     const current = metadata[location.pathname] ?? metadata['/'];
     document.title = current.title;
 
-    const descriptionTag = document.querySelector('meta[name="description"]');
-    const ogTitleTag = document.querySelector('meta[property="og:title"]');
-    const ogDescriptionTag = document.querySelector('meta[property="og:description"]');
-    const twitterTitleTag = document.querySelector('meta[name="twitter:title"]');
-    const twitterDescriptionTag = document.querySelector('meta[name="twitter:description"]');
+    const tags = [
+      ['meta[name="description"]', current.description],
+      ['meta[property="og:title"]', current.title],
+      ['meta[property="og:description"]', current.description],
+      ['meta[name="twitter:title"]', current.title],
+      ['meta[name="twitter:description"]', current.description],
+    ];
 
-    if (descriptionTag) descriptionTag.setAttribute('content', current.description);
-    if (ogTitleTag) ogTitleTag.setAttribute('content', current.title);
-    if (ogDescriptionTag) ogDescriptionTag.setAttribute('content', current.description);
-    if (twitterTitleTag) twitterTitleTag.setAttribute('content', current.title);
-    if (twitterDescriptionTag) twitterDescriptionTag.setAttribute('content', current.description);
+    tags.forEach(([selector, content]) => {
+      document.querySelector(selector)?.setAttribute('content', content);
+    });
+
+    window.scrollTo({ top: 0, behavior: 'auto' });
   }, [location.pathname]);
 
   return null;
@@ -43,19 +46,20 @@ function SeoManager() {
 
 function App() {
   return (
-    <>
-      <SeoManager />
+    <div className="site-shell">
+      <PageManager />
       <a className="skip-link" href="#main-content">Skip to content</a>
       <Navigation />
       <main id="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
-          {/* Add more routes here */}
-          {/* <Route path="/*" element={<p>Page not found</p>} /> error page */}
+          <Route path="*" element={<Home />} />
         </Routes>
       </main>
-    </>
+      <Footer />
+    </div>
   );
 }
-export default App
+
+export default App;

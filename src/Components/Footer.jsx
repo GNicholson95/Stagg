@@ -1,65 +1,42 @@
-import { Link } from "react-router-dom";
-import { FaEnvelope, FaFacebookF, FaGem, FaHome, FaInstagram, FaPhone } from "react-icons/fa";
+import { FiMail, FiMapPin, FiPhone } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
+import antlerLogo from '../assets/antler-white-no-bg.png';
 
-const Footer = () => {
-    return (
-      <footer id="footer" className="footer-container" aria-label="Site footer">
-        {/* Section: Links */}
-        <section className="footer-links">
-          <div className="footer-inner-container">
-            {/* Grid row */}
-            <div className="footer-row">
-              {/* Grid column */}
-              <div className="footer-column">
-                <h2 className="footer-heading">
-                  <FaGem className="footer-icon" aria-hidden="true" />STAG Systems
-                </h2>
-                <p className="footer-description">
-                  Security and smart home specialists servicing all of the Gold Coast and
-                  surrounding areas.
-                </p>
-              </div>
-  
-              {/* Grid column */}
-              <div className="footer-column">
-                <h2 className="footer-heading">Services</h2>
-                <p>
-                  <Link to="/services" className="footer-link">Residential</Link>
-                </p>
-                <p>
-                  <Link to="/services" className="footer-link">Commercial</Link>
-                </p>
-              </div>
-  
-              {/* Grid column */}
-              <div className="footer-column">
-                <h2 className="footer-heading">Contact</h2>
-                <p><FaHome className="footer-icon" aria-hidden="true" /> Maudsland, QLD</p>
-                <a className="footer-link" href="mailto:ga.nicholson@outlook.com" aria-label="Email STAG Systems">
-                  <FaEnvelope className="footer-icon" aria-hidden="true" /> ga.nicholson@outlook.com
-                </a>
-                <p><FaPhone className="footer-icon" aria-hidden="true" /> 0426-525-426</p>
-              </div>
-            </div>
-          </div>
-        </section>
-  
-        {/* Social Media and Copyright */}
-        <div className="footer-bottom">
-          <section className="footer-social-media">
-            <a className="social-btn" href="https://www.facebook.com/george.nicholson.7921" target="_blank" rel="noreferrer" role="button" aria-label="Visit STAG Systems on Facebook">
-              <FaFacebookF aria-hidden="true" />
-            </a>
-            <a className="social-btn" href="https://www.instagram.com/xgeorgenicholson/" target="_blank" rel="noreferrer" role="button" aria-label="Visit STAG Systems on Instagram">
-              <FaInstagram aria-hidden="true" />
-            </a>
-            <div className="social-text">
-              <span>Get connected with us on social networks:</span>
-            </div>
-          </section>
+function Footer() {
+  return (
+    <footer className="site-footer">
+      <div className="page-width footer-grid">
+        <div className="footer-brand">
+          <Link className="brand" to="/" aria-label="STAG Systems home">
+            <img src={antlerLogo} alt="" width="500" height="500" loading="lazy" />
+            <span className="brand-name">STAG</span>
+            <span className="brand-descriptor">Systems</span>
+          </Link>
+          <p>Connected technology systems for homes and businesses across the Gold Coast.</p>
         </div>
-      </footer>
-    );
-  };
-  
-  export default Footer;
+
+        <div className="footer-column">
+          <h2>Capabilities</h2>
+          <Link to="/services">Audio visual</Link>
+          <Link to="/services">Data & networks</Link>
+          <Link to="/services">Telecommunications</Link>
+          <Link to="/services">CCTV & security</Link>
+        </div>
+
+        <div className="footer-column footer-contact">
+          <h2>Contact</h2>
+          <a href="tel:0426525426"><FiPhone aria-hidden="true" /> 0426 525 426</a>
+          <a href="mailto:ga.nicholson@outlook.com"><FiMail aria-hidden="true" /> ga.nicholson@outlook.com</a>
+          <span><FiMapPin aria-hidden="true" /> Gold Coast, QLD</span>
+        </div>
+      </div>
+
+      <div className="page-width footer-bottom">
+        <span>© {new Date().getFullYear()} STAG Systems</span>
+        <span>AV · Data · Telecoms · CCTV</span>
+      </div>
+    </footer>
+  );
+}
+
+export default Footer;

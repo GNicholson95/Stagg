@@ -1,8 +1,31 @@
-# React + Vite
+# STAG Systems
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Pre-launch website for STAG Systems, a Gold Coast connected-technology business working across:
 
-Currently, two official plugins are available:
+- Audio visual
+- Data and networks
+- Telecommunications
+- CCTV and security
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Local development
+
+```bash
+npm ci
+npm run dev
+```
+
+## Checks
+
+```bash
+npm run lint
+npm run build
+```
+
+The GitHub Pages workflow is manual while the website is in pre-launch. Run the **Deploy to GitHub Pages** workflow only when the site is ready to be published.
+
+## Content to confirm before launch
+
+- Replace the current personal email address with a branded business email when available.
+- Add final licence and registration details only after they are active and verified.
+- Confirm the final business name, domain and social profile links.
+- Replace generic imagery with completed-project photography as the portfolio grows.

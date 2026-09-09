@@ -2,6 +2,7 @@ import { FiArrowRight, FiCamera, FiCheck, FiDatabase, FiMonitor, FiRadio } from 
 
 const services = [
   {
+    slug: 'audio-visual',
     number: '01',
     icon: FiMonitor,
     title: 'Audio visual',
@@ -10,6 +11,7 @@ const services = [
     includes: ['TV and display installation', 'Digital signage', 'Video and signal distribution', 'Commercial and hospitality AV'],
   },
   {
+    slug: 'data-networks',
     number: '02',
     icon: FiDatabase,
     title: 'Data & networks',
@@ -18,6 +20,7 @@ const services = [
     includes: ['Structured data cabling', 'Data outlets and patching', 'Wi-Fi access point infrastructure', 'Network upgrades and fault finding'],
   },
   {
+    slug: 'telecommunications',
     number: '03',
     icon: FiRadio,
     title: 'Telecommunications',
@@ -26,6 +29,7 @@ const services = [
     includes: ['Satellite and television systems', 'Signal distribution', 'Equipment replacement and upgrades', 'Diagnostics and fault finding'],
   },
   {
+    slug: 'cctv-security',
     number: '04',
     icon: FiCamera,
     title: 'CCTV & security',
@@ -58,14 +62,14 @@ function Services() {
 
       <section className="service-detail-section">
         <div className="page-width service-detail-list">
-          {services.map(({ number, icon: Icon, title, intro, copy, includes }) => (
-            <article className="service-detail" key={title}>
+          {services.map(({ slug, number, icon: Icon, title, intro, copy, includes }) => (
+            <article className="service-detail" id={slug} key={title} aria-labelledby={`${slug}-title`}>
               <div className="service-detail-marker">
                 <span>{number}</span>
                 <Icon aria-hidden="true" />
               </div>
               <div className="service-detail-title">
-                <h2>{title}</h2>
+                <h2 id={`${slug}-title`}>{title}</h2>
                 <p>{intro}</p>
               </div>
               <div className="service-detail-body">
@@ -87,12 +91,12 @@ function Services() {
             <p className="eyebrow">Where we work</p>
             <h2>Residential and commercial projects across the Gold Coast.</h2>
           </div>
-          <div className="context-list">
-            <span>Homes</span>
-            <span>Offices</span>
-            <span>Retail</span>
-            <span>Hospitality</span>
-          </div>
+          <ul className="context-list" aria-label="Project environments">
+            <li>Homes</li>
+            <li>Offices</li>
+            <li>Retail</li>
+            <li>Hospitality</li>
+          </ul>
         </div>
       </section>
 

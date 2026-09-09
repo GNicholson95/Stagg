@@ -8,8 +8,10 @@ import {
   FiMonitor,
   FiRadio,
 } from 'react-icons/fi';
-import commercialCctvImage from '../assets/commercial-cctv.jpg';
-import hikvisionCertImage from '../assets/hikvision-cert.png';
+import commercialCctvImage from '../assets/commercial-cctv-640.jpg';
+import commercialCctvMediumImage from '../assets/commercial-cctv-960.jpg';
+import commercialCctvLargeImage from '../assets/commercial-cctv-1600.jpg';
+import hikvisionCertImage from '../assets/hikvision-cert-preview.png';
 import hikvisionCertPdf from '../assets/hikvision.pdf';
 
 const capabilities = [
@@ -71,18 +73,20 @@ function Home() {
               >
                 Discuss a project <FiArrowRight aria-hidden="true" />
               </a>
-              <Link className="button button-secondary" to="/services">
+              <Link className="button button-secondary" to="/services/">
                 View capabilities
               </Link>
             </div>
           </div>
 
-          <div className="hero-visual" aria-label="Commercial CCTV installation">
+          <div className="hero-visual">
             <img
               src={commercialCctvImage}
+              srcSet={`${commercialCctvImage} 640w, ${commercialCctvMediumImage} 960w, ${commercialCctvLargeImage} 1600w`}
+              sizes="(max-width: 960px) calc(100vw - 2.5rem), (max-width: 1400px) 40vw, 34rem"
               alt="Commercial CCTV cameras mounted on a modern building"
-              width="3464"
-              height="2301"
+              width="1600"
+              height="1063"
               fetchPriority="high"
               decoding="async"
             />
@@ -93,11 +97,11 @@ function Home() {
           </div>
         </div>
 
-        <div className="page-width hero-trust" aria-label="Service highlights">
-          <span>One point of contact</span>
-          <span>Clean, considered installs</span>
-          <span>Hikvision certified</span>
-        </div>
+        <ul className="page-width hero-trust" aria-label="Service highlights">
+          <li>One point of contact</li>
+          <li>Clean, considered installs</li>
+          <li>Hikvision certified</li>
+        </ul>
       </section>
 
       <section className="section services-overview" id="capabilities">
@@ -130,7 +134,7 @@ function Home() {
           </div>
 
           <div className="section-link-row">
-            <Link className="text-link" to="/services">
+            <Link className="text-link" to="/services/">
               Explore every capability <FiArrowRight aria-hidden="true" />
             </Link>
           </div>
@@ -182,7 +186,13 @@ function Home() {
                 Recognised product knowledge supports better camera selection, cleaner setup and a
                 more confident handover for your CCTV system.
               </p>
-              <a className="text-link" href={hikvisionCertPdf} target="_blank" rel="noreferrer">
+              <a
+                className="text-link"
+                href={hikvisionCertPdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View Hikvision certification PDF (opens in a new tab)"
+              >
                 View certification <FiArrowRight aria-hidden="true" />
               </a>
             </div>

@@ -1,15 +1,30 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { FiMenu, FiPhone, FiX } from 'react-icons/fi';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import antlerLogo from '../../assets/antler-white-no-bg.png';
 
 function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuToggleRef = useRef(null);
   const location = useLocation();
 
   useEffect(() => {
     setMenuOpen(false);
   }, [location.pathname]);
+
+  useEffect(() => {
+    if (!menuOpen) return undefined;
+
+    const closeOnEscape = (event) => {
+      if (event.key === 'Escape') {
+        setMenuOpen(false);
+        menuToggleRef.current?.focus();
+      }
+    };
+
+    document.addEventListener('keydown', closeOnEscape);
+    return () => document.removeEventListener('keydown', closeOnEscape);
+  }, [menuOpen]);
 
   return (
     <header className="site-header">
@@ -21,6 +36,7 @@ function Navigation() {
         </Link>
 
         <button
+          ref={menuToggleRef}
           className="menu-toggle"
           type="button"
           aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
@@ -34,9 +50,9 @@ function Navigation() {
         <div className={`nav-menu ${menuOpen ? 'is-open' : ''}`} id="primary-menu">
           <div className="nav-links">
             <NavLink to="/" end>Home</NavLink>
-            <NavLink to="/services">Capabilities</NavLink>
+            <NavLink to="/services/">Capabilities</NavLink>
           </div>
-          <a className="nav-contact" href="tel:0426525426">
+          <a className="nav-contact" href="tel:+61426525426">
             <FiPhone aria-hidden="true" /> 0426 525 426
           </a>
         </div>
